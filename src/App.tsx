@@ -1,5 +1,5 @@
 import "./App.css";
-import { RadialGrid, RadialRow } from "radial-grid";
+import { RadialGrid, RadialRow, RadialCenter } from "radial-grid";
 
 import { CopyBlock, tomorrowNightEighties as theme } from "react-code-blocks";
 
@@ -7,7 +7,6 @@ function App() {
   return (
     <div className="text-left flex flex-col gap-2">
       <h1 className="font-bold mb-4">Radial Grid</h1>
-
       <p>
         A library to organize elements into circles instead of boring normal
         grids.
@@ -32,7 +31,6 @@ function App() {
 		<p>|</p>
 	</RadialRow>
 </RadialGrid>`}</Code>
-
       <RadialGrid className="w-52">
         <RadialRow className="bg-red-800 rounded-full my-6">
           <p>|</p>
@@ -51,7 +49,7 @@ function App() {
       </p>
       <Code>{`<RadialGrid className="w-52">
 	<RadialRow
-		className=" bg-red-800 rounded-full"
+		className="bg-red-800 rounded-full"
 		preserveChildRotation>
 		<p>1</p>
 		<p>2</p>
@@ -69,7 +67,7 @@ function App() {
 </RadialGrid>`}</Code>
       <RadialGrid className="w-52">
         <RadialRow
-          className=" bg-red-800 rounded-full my-6"
+          className="bg-red-800 rounded-full my-6"
           preserveChildRotation>
           <p>1</p>
           <p>2</p>
@@ -102,7 +100,7 @@ function App() {
       <Code>
         {`<RadialGrid className="w-52">
 	<RadialRow
-		className=" bg-red-800 rounded-full"
+		className="bg-red-800 rounded-full"
 		startAngle={90}
 		endAngle={270}
 		lastMeetEnd>
@@ -116,7 +114,7 @@ function App() {
       </Code>
       <RadialGrid className="w-52">
         <RadialRow
-          className=" bg-red-800 rounded-full my-6"
+          className="bg-red-800 rounded-full my-6"
           startAngle={90}
           endAngle={270}
           lastMeetEnd>
@@ -127,7 +125,6 @@ function App() {
           <p>|</p>
         </RadialRow>
       </RadialGrid>
-
       <h3>Multiple Rows</h3>
       <p>
         One grid can have unlimited rows. Simply add more, and be sure to
@@ -138,7 +135,7 @@ function App() {
         {`<RadialGrid className="w-52">
 	<RadialRow
 		diameter={"15rem"}
-		className=" bg-red-800 rounded-full"
+		className="bg-red-800 rounded-full"
 		startAngle={90}
 		endAngle={270}
 		lastMeetEnd>
@@ -150,7 +147,7 @@ function App() {
 	</RadialRow>
 	<RadialRow
 		diameter={"10rem"}
-		className=" bg-blue-800 rounded-full my-6"
+		className="bg-blue-800 rounded-full my-6"
 		startAngle={270}
 		endAngle={450}
 		lastMeetEnd>
@@ -162,7 +159,7 @@ function App() {
 	</RadialRow>
 	<RadialRow
 		diameter={"5rem"}
-		className=" bg-green-800 rounded-full">
+		className="bg-green-800 rounded-full">
 		<p>|</p>
 		<p>|</p>
 		<p>|</p>
@@ -177,7 +174,7 @@ function App() {
       <RadialGrid className="w-52">
         <RadialRow
           diameter={"15rem"}
-          className=" bg-red-800 rounded-full my-6"
+          className="bg-red-800 rounded-full my-6"
           startAngle={90}
           endAngle={270}
           lastMeetEnd>
@@ -189,7 +186,7 @@ function App() {
         </RadialRow>
         <RadialRow
           diameter={"10rem"}
-          className=" bg-blue-800 rounded-full my-6"
+          className="bg-blue-800 rounded-full my-6"
           startAngle={270}
           endAngle={450}
           lastMeetEnd>
@@ -199,9 +196,7 @@ function App() {
           <p>|</p>
           <p>|</p>
         </RadialRow>
-        <RadialRow
-          diameter={"5rem"}
-          className=" bg-green-800 rounded-full my-6">
+        <RadialRow diameter={"5rem"} className="bg-green-800 rounded-full my-6">
           <p>|</p>
           <p>|</p>
           <p>|</p>
@@ -211,6 +206,32 @@ function App() {
           <p>|</p>
           <p>|</p>
         </RadialRow>
+      </RadialGrid>
+      <h3>Adding a Center</h3>
+      <p>You can add an element in the middle of your circle like so:</p>
+      <Code>{`<RadialGrid className="w-52">
+	<RadialRow className="bg-red-800 rounded-full">
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+	</RadialRow>
+	<RadialCenter>
+		<p>😀</p>
+	</RadialCenter>
+</RadialGrid>`}</Code>
+      <RadialGrid className="w-52 my-6">
+        <RadialRow className="bg-red-800 rounded-full" lastMeetEnd>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+        </RadialRow>
+        <RadialCenter>
+          <p>😀</p>
+        </RadialCenter>
       </RadialGrid>
     </div>
   );
