@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="text-left flex flex-col gap-2">
       <h1 className="font-bold mb-4">Radial Grid</h1>
-      <h2>Description</h2>
+
       <p>
-        The purpose of this library is to provide a wrapper that organizes its
-        children into a circular layout.
+        A library to organize elements into circles instead of boring normal
+        grids.
       </p>
       <h2>Installation</h2>
       <code>npm install radial-grid</code>
