@@ -1,5 +1,5 @@
 import "./App.css";
-import RadialGrid from "radial-grid";
+import { RadialGrid, RadialRow } from "radial-grid";
 
 import { CopyBlock, tomorrowNightEighties as theme } from "react-code-blocks";
 
@@ -22,58 +22,68 @@ function App() {
       </p>
       <Code>{`import RadialGrid from "radial-grid";
 
-<RadialGrid className="w-52 bg-red-800 rounded-full my-6">
-	<p>|</p>
-	<p>|</p>
-	<p>|</p>
-	<p>|</p>
-	<p>|</p>
-	<p>|</p>
+<RadialGrid className="w-52">
+	<RadialRow className="bg-red-800 rounded-full">
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+	</RadialRow>
 </RadialGrid>`}</Code>
 
-      <RadialGrid className="w-52 bg-red-800 rounded-full my-6">
-        <p>|</p>
-        <p>|</p>
-        <p>|</p>
-        <p>|</p>
-        <p>|</p>
-        <p>|</p>
+      <RadialGrid className="w-52">
+        <RadialRow className="bg-red-800 rounded-full my-6">
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+        </RadialRow>
       </RadialGrid>
       <h3>Preserve Child Rotation</h3>
       <p>
         Should you want the children you pass to remain in the orientation you
-        provide, you may use the `preserveChildRotation` prop. For example, to
-        make a clock-like layout:
+        provide, you may use the <code>preserveChildRotation</code> prop. For
+        example, to make a clock-like layout:
       </p>
-      <Code>{`<RadialGrid className="w-52 bg-red-800 rounded-full my-6" preserveChildRotation>
-	<p>1</p>
-	<p>2</p>
-	<p>3</p>
-	<p>4</p>
-	<p>5</p>
-	<p>6</p>
-	<p>7</p>
-	<p>8</p>
-	<p>9</p>
-	<p>10</p>
-	<p>11</p>
-	<p>12</p>
+      <Code>{`<RadialGrid className="w-52">
+	<RadialRow
+		className=" bg-red-800 rounded-full"
+		preserveChildRotation>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<p>7</p>
+		<p>8</p>
+		<p>9</p>
+		<p>10</p>
+		<p>11</p>
+		<p>12</p>
+	</RadialRow>
 </RadialGrid>`}</Code>
-      <RadialGrid
-        className="w-52 bg-red-800 rounded-full my-6"
-        preserveChildRotation>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>5</p>
-        <p>6</p>
-        <p>7</p>
-        <p>8</p>
-        <p>9</p>
-        <p>10</p>
-        <p>11</p>
-        <p>12</p>
+      <RadialGrid className="w-52">
+        <RadialRow
+          className=" bg-red-800 rounded-full my-6"
+          preserveChildRotation>
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+          <p>5</p>
+          <p>6</p>
+          <p>7</p>
+          <p>8</p>
+          <p>9</p>
+          <p>10</p>
+          <p>11</p>
+          <p>12</p>
+        </RadialRow>
       </RadialGrid>
       <h3>Start and End angles</h3>
       <p>
@@ -90,24 +100,117 @@ function App() {
         the elements evenly spaced throughout.
       </p>
       <Code>
-        {`<RadialGrid className="w-52 bg-red-800 rounded-full my-6" startAngle={90} endAngle={270} lastMeetEnd>
-	<p>|</p>
-	<p>|</p>
-	<p>|</p>
-	<p>|</p>
-	<p>|</p>
+        {`<RadialGrid className="w-52">
+	<RadialRow
+		className=" bg-red-800 rounded-full"
+		startAngle={90}
+		endAngle={270}
+		lastMeetEnd>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+	</RadialRow>
 </RadialGrid>`}
       </Code>
-      <RadialGrid
-        className="w-52 bg-red-800 rounded-full my-6"
-        startAngle={90}
-        endAngle={270}
-        lastMeetEnd>
-        <p>|</p>
-        <p>|</p>
-        <p>|</p>
-        <p>|</p>
-        <p>|</p>
+      <RadialGrid className="w-52">
+        <RadialRow
+          className=" bg-red-800 rounded-full my-6"
+          startAngle={90}
+          endAngle={270}
+          lastMeetEnd>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+        </RadialRow>
+      </RadialGrid>
+
+      <h3>Multiple Rows</h3>
+      <p>
+        One grid can have unlimited rows. Simply add more, and be sure to
+        specify the <code>diameter</code> prop on each with a valid CSS width
+        value. This diameter represents the outer diameter of the row.
+      </p>
+      <Code>
+        {`<RadialGrid className="w-52">
+	<RadialRow
+		diameter={"15rem"}
+		className=" bg-red-800 rounded-full"
+		startAngle={90}
+		endAngle={270}
+		lastMeetEnd>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+	</RadialRow>
+	<RadialRow
+		diameter={"10rem"}
+		className=" bg-blue-800 rounded-full my-6"
+		startAngle={270}
+		endAngle={450}
+		lastMeetEnd>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+	</RadialRow>
+	<RadialRow
+		diameter={"5rem"}
+		className=" bg-green-800 rounded-full">
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+		<p>|</p>
+	</RadialRow>
+</RadialGrid>`}
+      </Code>
+      <RadialGrid className="w-52">
+        <RadialRow
+          diameter={"15rem"}
+          className=" bg-red-800 rounded-full my-6"
+          startAngle={90}
+          endAngle={270}
+          lastMeetEnd>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+        </RadialRow>
+        <RadialRow
+          diameter={"10rem"}
+          className=" bg-blue-800 rounded-full my-6"
+          startAngle={270}
+          endAngle={450}
+          lastMeetEnd>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+        </RadialRow>
+        <RadialRow
+          diameter={"5rem"}
+          className=" bg-green-800 rounded-full my-6">
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+          <p>|</p>
+        </RadialRow>
       </RadialGrid>
     </div>
   );
