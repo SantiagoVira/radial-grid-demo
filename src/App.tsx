@@ -19,7 +19,7 @@ function App() {
         This will produce 6 evenly-spaced tick marks, all tilted toward the
         center.
       </p>
-      <Code>{`import RadialGrid from "radial-grid";
+      <Code>{`import { RadialGrid, RadialRow } from "radial-grid";
 
 <RadialGrid className="w-52">
 	<RadialRow className="bg-red-800 rounded-full">
